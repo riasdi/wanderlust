@@ -1,4 +1,6 @@
-# Stage 1
+# *************************
+# -----Stage 1---------
+
 FROM node:21 AS backend-builder
 
 #setup working directory
@@ -12,7 +14,8 @@ RUN npm i
 
 #*********************************
 
-# Stage 2
+#------ Stage 2--------
+
 FROM node:21-slim
 
 #setup working directory

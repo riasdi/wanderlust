@@ -1,4 +1,5 @@
-# Stage 1
+# ----------Stage 1----------
+
 FROM node:21 AS frontend-builder
 
 #set the working directory to /app
@@ -10,11 +11,11 @@ COPY package*.json ./
 #install dependency
 RUN npm install
 
-
 #Copy the rest of the application
 COPY . .
 
-# Stage 2
+# ------Stage 2-------------
+
 FROM node:21-slim
 
 #set the working directory to /app
@@ -31,3 +32,4 @@ EXPOSE 5173
 
 #define th default command run the app in development
 CMD ["npm","run","dev", "--","--host"]
+
